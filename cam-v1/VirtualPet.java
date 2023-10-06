@@ -3,6 +3,10 @@
  * @author Cam
  * @author ?
  */
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 public class VirtualPet {
     
     VirtualPetFace face;
@@ -34,6 +38,24 @@ public class VirtualPet {
     public void sleep() {
         hunger = hunger + 1;
         face.setImage("asleep");
+    }
+
+    public void takeabeat(int milliseconds){
+        try {
+            Thread.sleep(milliseconds); //milliseconds
+        } catch(Exception e){
+        
+        }
+    }
+
+    public String getAnswer(String q){
+        String s = (String)JOptionPane.showInputDialog(
+                    new JFrame(),
+                    q,
+                    "Get a Response",
+                    JOptionPane.PLAIN_MESSAGE
+    );
+        return s;
     }
 
 } // end Virtual Pet
