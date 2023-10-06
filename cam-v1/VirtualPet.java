@@ -48,14 +48,21 @@ public class VirtualPet {
         }
     }
 
-    public String getAnswer(String q){
-        String s = (String)JOptionPane.showInputDialog(
-                    new JFrame(),
-                    q,
-                    "Get a Response",
-                    JOptionPane.PLAIN_MESSAGE
-    );
-        return s;
+    public void respondPositively(){
+        face.setMessage("That's great!");
+        face.setImage("happy");
+    }
+
+    public void agree(){
+        face.setMessage("Okay.");
+    }
+
+    public void setMessage(String f){
+        face.setMessage(f);
+    }
+
+    public void setFace(String m){
+        face.setImage(m);
     }
 
 } // end Virtual Pet
