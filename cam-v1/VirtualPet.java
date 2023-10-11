@@ -65,4 +65,30 @@ public class VirtualPet {
         face.setImage(m);
     }
 
+    public void death(){
+        face.setImage("sick");
+        face.setMessage("I don't feel so...");
+        try {
+            Thread.sleep(2000); 
+        } catch(Exception e){
+        
+        }
+        face.setImage("dead");
+        try {
+            Thread.sleep(1000); 
+        } catch(Exception e){
+        
+        }
+        face.setImage("skeleton");
+        try {
+            Thread.sleep(1000); 
+        } catch(Exception e){
+        
+        }
+        face.setImage("pushingdaisies");
+    }
+
+    git config –global user.name “Harsha Ramesh”
+git config –global user.email “harshar24@ausdk12.org”
+
 } // end Virtual Pet
