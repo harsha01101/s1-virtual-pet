@@ -5,8 +5,6 @@ public class Run {
 
     public Run(){
             VirtualPet p = new VirtualPet();
-            //p.exercise();
-            //p.takeabeat(3000);
             p.takeabeat(2000);
             String ans = getAnswer("How are you?");
             if(ans.equalsIgnoreCase("Good")){
@@ -23,8 +21,19 @@ public class Run {
                 p.setMessage("Okay. Goodnight.");
                 p.sleep();
             }
+            
+            /*p.exercise();
+            p.exercise();
+            p.exercise();
+            System.out.println(p.hunger());
+            p.sleep();
+            p.feed();*/
 
-        }
+            
+
+            }
+
+        
 
     public static void main(String[] args){
         new Run();

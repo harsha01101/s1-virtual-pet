@@ -11,12 +11,19 @@ public class VirtualPet {
     
     VirtualPetFace face;
     int hunger = 0;   // how hungry the pet is.
+
+    public int hunger(){
+        return this.hunger;
+    }
     
     // constructor
     public VirtualPet() {
         face = new VirtualPetFace();
+        face.setImage("happy");
+        face.setMessage("Hello!");
+        this.takeabeat(2000);
         face.setImage("normal");
-        face.setMessage("Hello.");
+        face.setMessage("I suppose I should introduce myself. I'm Tep.");
     }
     
     public void feed() {
@@ -33,11 +40,17 @@ public class VirtualPet {
         hunger = hunger + 3;
         face.setMessage("1, 2, 3, jump.  Whew.");
         face.setImage("tired");
+        if (hunger >= 10){
+            this.death();
+        }
     }
     
     public void sleep() {
         hunger = hunger + 1;
         face.setImage("asleep");
+        if (hunger >= 10){
+            this.death();
+        }
     }
 
     public void takeabeat(int milliseconds){
@@ -87,8 +100,5 @@ public class VirtualPet {
         }
         face.setImage("pushingdaisies");
     }
-
-    git config –global user.name “Harsha Ramesh”
-git config –global user.email “harshar24@ausdk12.org”
 
 } // end Virtual Pet
