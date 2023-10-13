@@ -23,7 +23,13 @@ public class VirtualPet {
         face.setMessage("Hello!");
         this.takeabeat(2000);
         face.setImage("normal");
-        face.setMessage("I suppose I should introduce myself. I'm Tep.");
+        face.setMessage("...");
+        this.takeabeat(2000);
+        face.setMessage("I didn't think I would find anyone else out here.");
+        this.takeabeat(2000);
+        face.setImage("confused");
+        this.takeabeat(1000);
+        face.setMessage("Wait.. don't tell me...");
     }
     
     public void feed() {
