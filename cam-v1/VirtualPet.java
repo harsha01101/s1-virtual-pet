@@ -11,9 +11,24 @@ public class VirtualPet {
     
     VirtualPetFace face;
     int hunger = 0;   // how hungry the pet is.
+    int x = 0;
+    int wood = 0;
+    int food = 0;
 
     public int hunger(){
         return this.hunger;
+    }
+
+    public int x(){
+        return this.x;
+    }
+
+    public void increaseX(){
+        x = x + 1;
+    }
+
+    public void resetX(){
+        x = 0;
     }
     
     // constructor
@@ -21,7 +36,7 @@ public class VirtualPet {
         face = new VirtualPetFace();
         face.setImage("happy");
         face.setMessage("Hello!");
-        this.takeabeat(2000);
+        /*this.takeabeat(2000);
         face.setImage("normal");
         face.setMessage("...");
         this.takeabeat(2000);
@@ -29,7 +44,7 @@ public class VirtualPet {
         this.takeabeat(2000);
         face.setImage("confused");
         this.takeabeat(1000);
-        face.setMessage("Wait.. don't tell me...");
+        face.setMessage("Wait.. don't tell me...");*/
     }
     
     public void feed() {
@@ -105,6 +120,37 @@ public class VirtualPet {
         
         }
         face.setImage("pushingdaisies");
+    }
+
+    public void gatherMaterials(String c, int d){
+        face.setImage("neutral");
+        face.setMessage("I'll go gather " + c);
+        try {
+            Thread.sleep(2000); 
+        } catch(Exception e){
+        
+        }
+        face.setImage("blank");
+         try {
+            Thread.sleep(3000); 
+        } catch(Exception e){
+        
+        }
+        if (c.equalsIgnoreCase("wood")){
+            face.setImage("wood");
+            wood = wood + d;
+        } else {
+            face.setImage("food");
+            food = food + d;
+        }
+        face.setMessage("I'm back with more " + c);
+        try {
+            Thread.sleep(3000); 
+        } catch(Exception e){
+        
+        }
+        face.setImage("normal");
+        face.setMessage("you have " + this.wood + "wood and " + this.food + " food.");
     }
 
 } // end Virtual Pet
