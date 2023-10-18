@@ -36,7 +36,7 @@ public class VirtualPet {
         face = new VirtualPetFace();
         face.setImage("happy");
         face.setMessage("Hello!");
-        /*this.takeabeat(2000);
+        this.takeabeat(2000);
         face.setImage("normal");
         face.setMessage("...");
         this.takeabeat(2000);
@@ -44,7 +44,7 @@ public class VirtualPet {
         this.takeabeat(2000);
         face.setImage("confused");
         this.takeabeat(1000);
-        face.setMessage("Wait.. don't tell me...");*/
+        face.setMessage("Wait.. don't tell me...");
     }
     
     public void feed() {
@@ -122,7 +122,8 @@ public class VirtualPet {
         face.setImage("pushingdaisies");
     }
 
-    public void gatherMaterials(String c, int d){
+    public void gatherMaterials(String c, String d){
+        int f = Integer.valueOf(d);
         face.setImage("neutral");
         face.setMessage("I'll go gather " + c);
         try {
@@ -138,10 +139,10 @@ public class VirtualPet {
         }
         if (c.equalsIgnoreCase("wood")){
             face.setImage("wood");
-            wood = wood + d;
+            wood = wood + f;
         } else {
             face.setImage("food");
-            food = food + d;
+            food = food + f;
         }
         face.setMessage("I'm back with more " + c);
         try {
@@ -150,7 +151,7 @@ public class VirtualPet {
         
         }
         face.setImage("normal");
-        face.setMessage("you have " + this.wood + "wood and " + this.food + " food.");
+        face.setMessage("you have " + this.wood + " wood and " + this.food + " food.");
     }
 
 } // end Virtual Pet
